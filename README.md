@@ -3,3 +3,25 @@ run the file
 paste youtube link
 set start time of video
 set the duration you want the video to be
+
+
+Bat File I converted to .exe is this
+:Input
+ECHO.
+SET url=
+ECHO Enter Youtube-url:
+SET /P url=
+IF "%url%" EQU "" GOTO End
+IF "%url: =%" NEQ "%url%" GOTO Input
+ECHO Enter start time (in seconds, or in hh:mm:ss[.xxx] form):
+SET /P start=
+ECHO Enter duration (in seconds, or in hh:mm:ss[.xxx] form):
+SET /P dur=
+ECHO.
+FOR /F "delims==" %%A IN ('youtube-dl.exe --no-warnings --get-filename "%url%"') DO SET filename=%%A
+FOR /F %%B IN ('youtube-dl.exe -g "%url%"') DO (
+ffmpeg.exe -hide_banner -ss "%start%" -i "%%B" -c copy -t "%dur%" "%filename%"
+)
+GOTO Input
+
+:End
