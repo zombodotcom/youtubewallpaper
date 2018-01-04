@@ -3,6 +3,7 @@ run the file
 paste youtube link
 set start time of video
 set the duration you want the video to be
+type n at the second prompt after downloading the video to not download the audio of it.
 
 
 Bat File I converted to .exe is this
