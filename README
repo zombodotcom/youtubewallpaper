@@ -1,4 +1,5 @@
 Uses FFmpeg.exe and Youtube-dl.exe both included in the exe to grab videos from youtube for wallpaper engine
+.exe Includes FFmpeg.exe and Youtube-dl.exe and will auto extract them when you run the program
 run the file
 paste youtube link
 set start time of video
